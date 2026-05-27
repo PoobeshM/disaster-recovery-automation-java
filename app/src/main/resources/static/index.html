@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Recovery Dashboard</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px auto;
+            width: 300px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .status {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .up {
+            color: #00ff88;
+        }
+
+        .down {
+            color: #ff4d4d;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #00c6ff;
+            color: black;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #0072ff;
+            color: white;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
+            .card {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🚀 Disaster Recovery System</h1>
+    <p>Kubernetes + Jenkins CI/CD Demo</p>
+
+    <div class="card">
+        <h2>Application Status</h2>
+        <p class="status up" id="status">UP ✅</p>
+    </div>
+
+    <div class="card">
+        <h2>System Info</h2>
+        <p>Platform: Kubernetes</p>
+        <p>CI/CD: Jenkins</p>
+        <p>Port: 30007</p>
+    </div>
+
+    <div class="card">
+        <h2>Demo Controls</h2>
+        <button onclick="simulateCrash()">Simulate Failure 💥</button>
+        <button onclick="refreshStatus()">Refresh Status 🔄</button>
+    </div>
+
+    <div class="footer">
+        <p>Self-Healing Enabled | Auto Recovery Active 🔥</p>
+    </div>
+</div>
+
+<script>
+function simulateCrash() {
+    alert("Now delete pod using:\n kubectl delete pod <pod-name>");
+}
+
+function refreshStatus() {
+    document.getElementById("status").innerText = "UP ✅";
+}
+</script>
+
+</body>
+</html>
